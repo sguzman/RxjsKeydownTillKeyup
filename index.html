@@ -25,6 +25,12 @@
         </div>
         <script>
             const keyArea = document.getElementById('key');
+
+            const keys$ = Rx.Observable.fromEvent(document, 'keydown').map(s => 'down ' + s.key)
+                .merge(Rx.Observable.fromEvent(document, 'keyup')
+                    .map(s => 'up ' + s.key))
+                .distinctUntilChanged()
+                .subscribe(s => keyArea.innerText = s)
         </script>
     </body>
 </html>
