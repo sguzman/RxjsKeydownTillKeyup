@@ -8,12 +8,23 @@
         <title>Rxjs Keydown/Keyup Example</title>
         <style>
             h1 {
-                display: flex;
-                justify-content: center;
+                text-align: center;
+            }
+
+            #buffer {
+                text-align: center;
             }
         </style>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/5.4.2/Rx.min.js"></script>
     </head>
     <body>
         <h1>Rxjs Keydown/Keyup Example</h1>
+        <div id="buffer">
+            <h2 id="key"></h2>
+        </div>
+        <script>
+            const keyArea = document.getElementById('key');
+        </script>
     </body>
 </html>
